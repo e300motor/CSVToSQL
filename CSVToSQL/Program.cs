@@ -71,14 +71,20 @@ namespace CSVToSQL
             }
         }
 
+        private void showCopyrightAndVersion()
+        {
+            Console.WriteLine("\t2017/03 (C) Software CSVToSQL, Copyright Owner ITRI E300");
+            Console.WriteLine("\t\tCSVToSQL VERSION:{0}.{1}", VERSION, SUBVERSION);
+        }
+
         //Set the Directory of CSV-files.
         public void setCSVDirectory()
         {
             bool loopForNo = true;
+            showCopyrightAndVersion();
             do
             {
-                Console.WriteLine("\t2017/03 (C) Software CSVToSQL, Copyright Owner ITRI E300");
-                Console.WriteLine("\t\tCSVToSQL VERSION:{0}.{1}", VERSION, SUBVERSION);
+  
                 Console.Write("\nSelect New Directory Or Press \"Enter\" To Default ({0}):", StoredDirectory);
 
                 string line = Console.ReadLine();
@@ -386,6 +392,8 @@ namespace CSVToSQL
             DirectoryInfo dirInfo = new DirectoryInfo(e.FullPath.ToString());
 
             importToDB(dirInfo);
+
+            Console.WriteLine("{0} Finish!" ,e.Name );
 
             //sw.Stop();
             //string result1 = sw.Elapsed.TotalMilliseconds.ToString();
