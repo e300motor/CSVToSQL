@@ -77,8 +77,8 @@ namespace CSVToSQL
             bool loopForNo = true;
             do
             {
-                Console.WriteLine("\t2017/03 (C) Software CSVToSQL, Copyright Owner ITRI E300'");
-                Console.WriteLine("\t\tCSVToSQL VERSION:{0}.{1}",VERSION,SUBVERSION);
+                Console.WriteLine("\t2017/03 (C) Software CSVToSQL, Copyright Owner ITRI E300");
+                Console.WriteLine("\t\tCSVToSQL VERSION:{0}.{1}", VERSION, SUBVERSION);
                 Console.Write("\nSelect New Directory Or Press \"Enter\" To Default ({0}):", StoredDirectory);
 
                 string line = Console.ReadLine();
@@ -144,7 +144,7 @@ namespace CSVToSQL
         }
     }
 
-    enum DATABASE_FILED
+    enum DATABASE_FIELD
     {
         DATE = 1,
         SECTION = 4,
@@ -242,11 +242,9 @@ namespace CSVToSQL
     {
 
         private static CSVModel csvModel;
-      
+
         static void Main(string[] args)
         {
-
-
             IEnvironment env = new Environment();
             csvModel = new CSVModel();
 
@@ -290,11 +288,11 @@ namespace CSVToSQL
         private static LiftSensorRaw transformSensorRaw(string[] fieldData)
         {
             LiftSensorRaw raw;
-            raw.date = Convert.ToInt64(fieldData[(int)DATABASE_FILED.DATE]);
-            raw.sec = Convert.ToInt32(fieldData[(int)DATABASE_FILED.SECTION]);
-            raw.rpm = Convert.ToInt32(fieldData[(int)DATABASE_FILED.RPM]);
-            raw.current = Convert.ToInt32(fieldData[(int)DATABASE_FILED.CURRENT]);
-            raw.temp = Convert.ToInt32(fieldData[(int)DATABASE_FILED.TEMP]);
+            raw.date = Convert.ToInt64(fieldData[(int)DATABASE_FIELD.DATE]);
+            raw.sec = Convert.ToInt32(fieldData[(int)DATABASE_FIELD.SECTION]);
+            raw.rpm = Convert.ToInt32(fieldData[(int)DATABASE_FIELD.RPM]);
+            raw.current = Convert.ToInt32(fieldData[(int)DATABASE_FIELD.CURRENT]);
+            raw.temp = Convert.ToInt32(fieldData[(int)DATABASE_FIELD.TEMP]);
             return raw;
         }
 
