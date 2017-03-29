@@ -84,7 +84,7 @@ namespace CSVToSQL
             showCopyrightAndVersion();
             do
             {
-  
+
                 Console.Write("\nSelect New Directory Or Press \"Enter\" To Default ({0}):", StoredDirectory);
 
                 string line = Console.ReadLine();
@@ -308,7 +308,7 @@ namespace CSVToSQL
 
             LiftChairs liftChairs = new LiftChairs
             {
-                Date = (new DateTime(1970, 1, 1, 0, 0, 0)).AddSeconds(structRaw.date),
+                Date = (new DateTime(1970, 1, 1, 0, 0, 0)).AddHours(8).AddSeconds(structRaw.date),
                 Section = mapSensorData.mapToSection(structRaw.sec),
                 RPM = mapSensorData.mapToRPM(structRaw.rpm),
                 Current = mapSensorData.mapToCurrent(structRaw.current),
@@ -393,7 +393,7 @@ namespace CSVToSQL
 
             importToDB(dirInfo);
 
-            Console.WriteLine("{0} Finish!" ,e.Name );
+            Console.WriteLine("{0} Finish!", e.Name);
 
             //sw.Stop();
             //string result1 = sw.Elapsed.TotalMilliseconds.ToString();
